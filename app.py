@@ -9,10 +9,10 @@ app: Flask = Flask(__name__)
 login_user_name: str = "osamu"
 
 
-# # Databbaseの設定 --- (※2)
-# import os
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_CONNECTION',None)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://db/sqlite'
+# Databbaseの設定 --- (※2)
+import os
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_CONNECTION',None)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://db/sqlite'
 db = SQLAlchemy(app)
 
 # メッセージのデータベースモデル --- (※3)
